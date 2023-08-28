@@ -1,17 +1,21 @@
 .container {
-  --max-width: 1596px;
+  --max-width: 1180px;
   // --padding: 30px;
   max-width: calc(var(--max-width) + var(--padding) * 2);
-  // padding: 0 var(--padding);
-  margin-left: 162px;
+  padding: 0 var(--padding);
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 
   @media (max-width: 1024px) {
     --max-width: 880px;
+  }
+
+  @media (max-width: 956px) {
+    flex-direction: column;
   }
 
   @media (max-width: 768px) {
