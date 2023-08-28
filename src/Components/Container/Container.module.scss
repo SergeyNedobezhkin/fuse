@@ -1,0 +1,24 @@
+.container {
+  --max-width: 1596px;
+  // --padding: 30px;
+  max-width: calc(var(--max-width) + var(--padding) * 2);
+  // padding: 0 var(--padding);
+  margin-left: 162px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 1024px) {
+    --max-width: 880px;
+  }
+
+  @media (max-width: 768px) {
+    --max-width: 620px;
+  }
+
+  @media (max-width: 540px) {
+    --padding: 15px;
+  }
+}
