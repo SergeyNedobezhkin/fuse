@@ -9,6 +9,7 @@ function SearchInput({ setValueInput, valueInput, handleSearch }) {
         onChange={(event) => setValueInput(event.target.value)}
         value={valueInput}
         type="text"
+        autoFocus={true}
       ></input>
     </form>
   );
