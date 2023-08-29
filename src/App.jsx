@@ -1,16 +1,16 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useDebounce } from "@uidotdev/usehooks";
+import FoundJokes from "./Components/FoundJokes/FoundJokes";
+import ContantBlock from "./Components/ContantBlock/ContantBlock";
 import SearchInput from "./Components/SearchInput/SearchInput";
 import Container from "./Components/Container/Container";
-import React, { useEffect, useState } from "react";
-import ContantBlock from "./Components/ContantBlock/ContantBlock";
-import axios from "axios";
-import FoundJokes from "./Components/FoundJokes/FoundJokes";
-import { useDebounce } from "@uidotdev/usehooks";
 
 function App() {
   const [jokes, setJokes] = useState([]);
   const [valueInput, setValueInput] = useState("");
-  const debouncedSearchTerm = useDebounce(valueInput, 500);
-
+  const debouncedSearchTerm = useDebounce(valueInput, 400);
+  console.log(jokes);
   const getArticle = async () => {
     const response = await axios.get(
       `https://api.chucknorris.io/jokes/search?query=${valueInput}`
@@ -19,7 +19,9 @@ function App() {
   };
 
   useEffect(() => {
-    getArticle();
+    if (valueInput.length >= 3) {
+      getArticle();
+    }
   }, [debouncedSearchTerm]);
 
   const handleSearch = (e) => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./SearchInput.module.scss";
 function SearchInput({ setValueInput, valueInput, handleSearch }) {
   return (
