@@ -1,8 +1,9 @@
 import React from "react";
 import style from "./SearchInput.module.scss";
-function SearchInput({ setValueInput, valueInput, handleSearch }) {
+
+function SearchInput({ setValueInput, valueInput }) {
   return (
-    <form className={style.searchInputWrapper} onSubmit={handleSearch}>
+    <form className={style.searchInputWrapper}>
       <input
         placeholder="Search jokes..."
         className={style.searchInput}

@@ -1,8 +1,8 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import jokeSlice from "../slice/jokeSlice.js";
+import jokeReducer from "../slice/jokeSlice";
 
 const rootReducer = combineReducers({
-  joke: jokeSlice,
+  jokes: jokeReducer,
 });
 
 export default rootReducer;
