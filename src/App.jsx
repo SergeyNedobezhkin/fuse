@@ -10,7 +10,7 @@ function App() {
   const [jokes, setJokes] = useState([]);
   const [valueInput, setValueInput] = useState("");
   const debouncedSearchTerm = useDebounce(valueInput, 400);
-  console.log(jokes);
+
   const getArticle = async () => {
     const response = await axios.get(
       `https://api.chucknorris.io/jokes/search?query=${valueInput}`
@@ -39,7 +39,11 @@ function App() {
       <FoundJokes jokes={jokes} />
       <Container>
         {jokes.map((joke) => {
-          return <ContantBlock joke={joke} key={joke.id} />;
+          return (
+            <a key={joke.id} href={joke.url}>
+              <ContantBlock joke={joke} />
+            </a>
+          );
         })}
       </Container>
     </>
